@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-  <main className="min-h-screen bg-white px-4 py-8 flex flex-col items-center ">
+  <main className="h-auto bg-background px-4 py-8 flex flex-col items-center">
   <div className="max-w-md w-full text-center mb-2">
     <h2 className="text-xl font-semibold text-zinc-800">
       Seja bem-vindo ao portal da <span className="text-yellow-400 font-bold">T3</span>,
@@ -22,30 +22,37 @@ export default function Home() {
     </div>
   </div>
   <div className="mt-2">
-  <Card className="mb-3">
-  <CardContent className="flex items-center gap-4">
-    <h3 className="text-sm"><span className="text-yellow-400">1° Lote</span> <br/>Aluno</h3>
-    <h1>30 R$</h1>
-    <Button className="bg-yellow-500 text-black">COMPRAR</Button>
-  </CardContent>
-  
-</Card>
-<Card className="mb-3 opacity-50 ">
-  <CardContent className="flex items-center gap-4">
-    <h3 className="text-sm"><span className="text-yellow-400">1° Lote</span> <br/>Externo</h3>
-    <h1>35 R$</h1>
-    <Button className="bg-stone-500 text-black" disabled>COMPRAR</Button>
-  </CardContent>
-  
-</Card>
-<Card className="mb-3 opacity-50 ">
-  <CardContent className="flex items-center gap-4">
-    <h3 className="text-sm"><span className="text-yellow-400">2° Lote</span> <br/>Aluno</h3>
-    <h1>35 R$</h1>
-    <Button className="bg-stone-500 text-black" disabled>COMPRAR</Button>
-  </CardContent>
-  
-</Card>
+    <Card className="mb-3">
+      <CardContent className="flex items-center">
+        <h3 className="text-lg"><span className="text-primary-darker font-semibold">1° Lote</span> <br/>Aluno</h3>
+        <h1 className="font-semibold">30 R$</h1>
+        <Button>COMPRAR</Button>
+      </CardContent>
+    </Card>
+
+    <Card className="mb-3" variant={"disabled"}>
+      <CardContent className="flex items-center">
+        <h3 className="text-lg"><span className="text-primary-darker font-semibold">1° Lote</span> <br/>Externo</h3>
+        <h1 className="font-semibold">35 R$</h1>
+        <Button variant={"disabled"}>COMPRAR</Button>
+      </CardContent>
+    </Card>
+
+    <Card className="mb-3" variant={"disabled"}>
+      <CardContent className="flex items-center">
+        <h3 className="text-lg"><span className="text-primary-darker font-semibold">2° Lote</span> <br/>Aluno</h3>
+        <h1 className="font-semibold">35 R$</h1>
+        <Button variant={"disabled"}>COMPRAR</Button>
+      </CardContent>
+    </Card> 
+
+    <Card className="mb-3" variant={"disabled"}>
+      <CardContent className="flex items-center">
+        <h3 className="text-lg"><span className="text-primary-darker font-semibold">2° Lote</span> <br/>Externo</h3>
+        <h1 className="font-semibold">40 R$</h1>
+        <Button variant={"disabled"}>COMPRAR</Button>
+      </CardContent>
+    </Card> 
   </div>
 
 </main>

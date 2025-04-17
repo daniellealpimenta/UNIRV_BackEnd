@@ -8,7 +8,7 @@ export function Sidebar() {
   return (
     <div className="w-full bg-muted/40">
       {/* MOBILE: Sheet menu */}
-      <div className="sm:hidden w-full">
+<div className="sm:hidden w-full">
   <header className="sticky top-0 z-30 flex h-14 items-center justify-end px-4 border-b bg-background">
     <Sheet>
       <SheetTrigger asChild>
@@ -18,8 +18,8 @@ export function Sidebar() {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="right" className="bg-yellow-300 border-0 text-black">
-        <nav className="grid gap-6 text-lg font-medium pt-4">
+      <SheetContent side="right" className="bg-primary border-0 text-black">
+        <nav className="p-4 grid gap-6 text-lg font-medium">
           <Link href="#" className="flex items-center gap-4 px-2.5 text-black">
             <Home className="h-5 w-5" />
             Início
@@ -43,7 +43,7 @@ export function Sidebar() {
 </div>
 
       {/* DESKTOP: Navbar */}
-      <nav className="hidden sm:flex items-center justify-between px-6 py-4 bg-yellow-500 text-black w-full h-15">
+      <nav className="hidden sm:flex items-center justify-between px-6 py-4 bg-primary text-black w-full h-15">
   {/* Esquerda: links principais */}
   <div className="flex items-center gap-6 text-sm font-medium">
     <Link href="#" className="flex items-center gap-2 hover:text-black transition">
