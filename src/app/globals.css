@@ -1,10 +1,13 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-expired: var(--background-expired);
+  --color-background-dark-gray: var(--background-dark-gray);
+  --color-background-light-yellow: var(--primary-light);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
   /* --font-mono: var(--font-geist-mono); */
@@ -46,15 +49,18 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #FDFDFE;
+  --background: #fdfdfe;
+  --background-expired: #dcdcdeac;
+  --background-dark-gray: #989595ac;
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: #F3D853;
+  --primary: #f3d853;
   --primary-foreground: #121214;
-  --primary-darker: #EFCC1A;
+  --primary-darker: #efcc1a;
+  --primary-light: #F6E179;
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -118,6 +124,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
