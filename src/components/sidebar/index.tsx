@@ -1,66 +1,85 @@
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger} from "../ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
-import { Home, MenuIcon, User,  } from "lucide-react";
+import { Home, MenuIcon, User } from "lucide-react";
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
 
-export function Sidebar(){
+export function Sidebar() {
+  return (
+    <div className="w-full bg-muted/40">
+      {/* MOBILE: Sheet menu */}
+      <div className="sm:hidden w-full">
+  <header className="sticky top-0 z-30 flex h-14 items-center justify-end px-4 border-b bg-background">
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button size="icon" variant="outline">
+          <MenuIcon className="w-5 h-5" />
+          <span className="sr-only">Abrir/Fechar menu</span>
+        </Button>
+      </SheetTrigger>
 
-    return(
-        <div className="flex w-full flex-col bg-muted/40">
+      <SheetContent side="right" className="bg-yellow-300 border-0 text-black">
+        <nav className="grid gap-6 text-lg font-medium pt-4">
+          <Link href="#" className="flex items-center gap-4 px-2.5 text-black">
+            <Home className="h-5 w-5" />
+            Início
+          </Link>
+          <Link href="#" className="flex items-center gap-4 px-2.5 text-black">
+            <User className="h-5 w-5" />
+            Meu Perfil
+          </Link>
+          <Link href="https://www.instagram.com/medfamelt3/" target="_blank" className="flex items-center gap-4 px-2.5 text-black">
+            <SiInstagram className="h-5 w-5" />
+            Instagram
+          </Link>
+          <Link href="https://wa.me/5561999525238" target="_blank" className="flex items-center gap-4 px-2.5 text-black">
+            <SiWhatsapp className="h-5 w-5" />
+            Whatsapp
+          </Link>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  </header>
+</div>
 
-            <div className="sm:hidden flex flex-col">
-                <header className="sticky top-0 z-30 flex h-14 items-center px-4 border-b bg-background gap-4 sm:statc sm:h-auto sm:border-0 sm:bg-transparente">
-                    <Sheet>
-                        <div className="ml-auto">
-                        <SheetTrigger asChild>
-                            <Button size="icon" variant="outline" className="sm:hidden right-500 jus ">
-                                <MenuIcon className="w-5 h-5 items-end"/>
-                                <span className="sr-only">Abrir/Fechar menu</span>
-                            </Button>
-                        </SheetTrigger>
-                        </div>
-                        <SheetContent side="right" className="bg-zinc-900 border-0 text-white">
-                            <nav className="grid gap-6 text-lg font-medium pt-4">
-                            
-                                <Link href="#"
-                                        className="flex items-center gap-4 px-2.5 text-yellow-300"
-                                >
-                                    <Home className="h-5 w-5 transition-all" />
-                                    Início
-                                    <span className="sr-only">Ícone de home</span>
-                                </Link>
-                                <Link href="#"
-                                        className="flex items-center gap-4 px-2.5  text-yellow-300"
-                                >
-                                    <User className="h-5 w-5 transition-all" />
-                                    Meu Perfil
-                                    <span className="sr-only">Ícone de perfil</span>
-                                </Link>
+      {/* DESKTOP: Navbar */}
+      <nav className="hidden sm:flex items-center justify-between px-6 py-4 bg-yellow-500 text-black w-full h-15">
+  {/* Esquerda: links principais */}
+  <div className="flex items-center gap-6 text-sm font-medium">
+    <Link href="#" className="flex items-center gap-2 hover:text-black transition">
+      <Home className="h-4 w-4" />
+      Início
+    </Link>
+    <Link
+      href="https://www.instagram.com/medfamelt3/"
+      target="_blank"
+      className="flex items-center gap-2 hover:text-black transition"
+    >
+      <SiInstagram className="h-4 w-4" />
+      Instagram
+    </Link>
+    <Link
+      href="https://wa.me/5561999525238"
+      target="_blank"
+      className="flex items-center gap-2 hover:text-black transition"
+    >
+      <SiWhatsapp className="h-4 w-4" />
+      Whatsapp
+    </Link>
+  </div>
 
-                                <Link href="https://www.instagram.com/medfamelt3/" target="_Blank"
-                                        className="flex items-center gap-4 px-2.5  text-yellow-300"
-                                >
-                                    <SiInstagram className="h-5 w-5 transition-all" />
-                                    Instagram
-                                    <span className="sr-only">Ícone do instagram</span>
-                                </Link>
+  {/* Direita: perfil destacado */}
+  <div>
+    <Link
+      href="#"
+      className="flex items-center gap-2 text-sm font-medium hover:text-black transition"
+    >
+      <User className="h-4 w-4" />
+      Meu Perfil
+    </Link>
+  </div>
+</nav>
 
-                                <Link href="https://wa.me/5561999525238" target="_Blank"
-                                        className="flex items-center gap-4 px-2.5  text-yellow-300"
-                                >
-                                    <SiWhatsapp className="h-5 w-5 transition-all" />
-                                    Whatsapp
-                                    <span className="sr-only">Ícone de Whatsapp</span>
-                                </Link>
-
-                            </nav>
-                        </SheetContent>
-                    </Sheet>
-                    
-                </header>
-            </div>
-        </div> 
-    )
-    
+    </div>
+  );
 }
